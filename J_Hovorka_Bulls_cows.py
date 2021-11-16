@@ -1,5 +1,5 @@
 import random
-#Úvodní proměnné
+#Úvodní proměnné.
 separator = 47 * "-"
 welcome = """Hello there!
 {}
@@ -13,7 +13,7 @@ num_of_tries = 0
 #Smyčka pro opakování hry.
 while True:
 
-    #Přičtení jedničky za každou započatou hru
+    #Přičtení jedničky za každou započatou hru.
     num_of_games += 1
 
     #Generování náhodného čísla, které se hráč bude snažit uhodnout.
@@ -32,13 +32,13 @@ while True:
     for i in str(the_num):
         the_num_list.append(i)
 
-    #Počítadlo pokusů
+    #Počítadlo pokusů.
     guesses = 0
 
-    #Smyčka hádání čísla
+    #Smyčka hádání čísla.
     while True:
 
-        #Uživatel hádá číslo
+        #Uživatel hádá číslo.
         #Pomocí try/except, a if podmínek jsem zajistil, aby se do programu dostala jen čísla, která odpovídají zadání.
         guesses += 1
         try:
@@ -60,7 +60,7 @@ while True:
         if x != 0:
             continue
 
-        #Číslo které zadá uživatel musí mít 4 číslice, a nesmí začínat nulou
+        #Číslo které zadá uživatel musí mít 4 číslice, a nesmí začínat nulou.
         if user_guess[0] == "0":
             print("Number can't begin with 0")
             print(separator)
@@ -74,7 +74,7 @@ while True:
             print(separator)
             continue
 
-        #Vyhodnocení tipu uživatele
+        #Vyhodnocení tipu uživatele.
         #Vynulování proměnných pro vypisování cows/bulls po každé iteraci.
         print(separator)
         cows = 0
@@ -94,6 +94,7 @@ while True:
                 cows += 1
 
         #Zjišťování zda-li user již neuhodl správné číslo, případně výpis informací o hře.
+        #Pokud hráč číslo ještě neuhodl, zjišťuji kolik je cows/bulls kvůli množnému/jednotnému číslu ve výpisu.
         if bulls < 4:
             if bulls == 1 and cows == 1:
                 print (f"{bulls} bull, {cows} cow")
